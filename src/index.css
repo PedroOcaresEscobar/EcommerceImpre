@@ -1,0 +1,34 @@
+.dark{
+  background-color:#ff8de4 !important;
+}
+
+.carrito{
+  background-color: aliceblue;
+  border-radius: 100%;
+  padding: 25px;
+  margin: 25px;
+  border: #ff8de4;
+
+}
+.imgCarrito{
+  width: 50px;
+  height: 50px;
+  
+}
+.imprebooks{
+  color:white;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none;
+  
+}
+main{
+  margin-top: 200px;
+  
+}
+.saludo{
+  color: #ff8de4;
+  font-size: 100px;
+  font-weight: bold;
+}
