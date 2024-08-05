@@ -1,34 +1,374 @@
-.dark{
-  background-color:#ff8de4 !important;
-}
-
-.carrito{
-  background-color: aliceblue;
-  border-radius: 100%;
-  padding: 25px;
-  margin: 25px;
-  border: #ff8de4;
-
-}
-.imgCarrito{
-  width: 50px;
-  height: 50px;
+header{
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  height: 6rem;
   
 }
-.imprebooks{
-  color:white;
-  font-size: 50px;
-  font-weight: bold;
-  padding: 20px;
+main {
+  background-color: #fdb2ec;
+  display: flex;
+  min-height: 100vh; 
+  justify-content: center;/* 100vh significa 100% de la altura de la ventana del navegador */
+  
+  
+}
+.containerMainMain{
+  
+  width: 80%;
+ 
+  
+  margin-right: auto;
+  margin-left: auto;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); */
+  
+}
+
+.containerTitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  h1{
+    margin-top: 50px;
+    color: #fa2acd;
+    padding: 35px 45px 35px 45px ;
+    
+    border-radius: 9999px;
+  }
+}
+
+.ContainterFilterCategory{
+  background-color: white;
+  width: 50%;
+  border-radius: 20px;
+}
+.LinkCategory{
   text-decoration: none;
-  
+  color: #fa2acd;
+  margin: 10px;
+  padding: 0px 10px 0px 10px ;
 }
-main{
-  margin-top: 200px;
-  
+.LinkCategory:hover{
+  background-color: #fa2acd;
+  color:white;
+  border-radius: 20px;
+
 }
-.saludo{
-  color: #ff8de4;
-  font-size: 100px;
+.LinkCategory:active{
+  background-color: #91d2f0;
+
+  border-radius: 23px;
+}
+/* Contenedor Card Items  */
+/* Contenedor Card Items */
+.containerItemsList {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1vw; /* Espacio entre tarjetas */
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  /* background-color: red; */
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+
+.containerCardItems {
+  width: 100%;
+  height: 100%;
+ /* Espacio interno para que la imagen no toque los bordes */
+  /* background-color: blue; */
+  transition: background-color 0.3s ease;
+}
+
+.containerCardItems:hover .imageItem {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.contentCardItems {
+  display: flex;
+  justify-content: center;
+}
+
+.imageItem {
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+}
+
+.descriptionCardItems {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.descriptionPLeft,
+.descriptionPRight {
+  color: #fa2acd;
+  font-size: small;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: bold;
+}
+
+.descriptionPLeft {
+  font-weight: 900;
+  color: #ffffff;
+  font-size: large;
+  margin-top: 10px;
+  font-size: small;
+  margin-left: 3px;
+}
+
+.descriptionPRight {
+  margin-left: auto;
+  font-weight: 900;
+  color: rgb(250, 42, 205);
+  margin-right: 3px;
+}
+
+
+
+
+/* --------------------MODAL----------- */
+.containerDetailItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  
+
+}
+
+.contentDetailItem {
+  width: 670px; /* Ancho del contenido del modal */
+  height: 280px; /* Alto del contenido del modal */
+  background-color: #fff; /* Color de fondo blanco para el contenido */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  overflow: hidden; /* Evita que el contenido se desborde */
+  
+
+}
+
+.cardDetailItem {
+  display: grid; 
+  grid-template-columns: repeat(10,1fr);
+  /* background-color: rgb(253, 178, 236); */
+  background-color: #fa2acd;
+  height: 100%;
+  
+}
+
+.imgItemDetail {
+  grid-column: 1/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 10px 10px;
+
+}
+
+.imageItemDetailItem{
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.DetailItem {
+  grid-column: 5/11;
+  /* background-color: #fff; */
+  margin:0px 10px 0px 10px;
+  text-align: center;
+
+  
+}
+
+.DetailItemTitle,
+.contentDetailItemPrice,
+.DetailItemCount{
+  margin-bottom: 10px; /* Espaciado entre elementos */
+}
+.DetailItemPrice{
+  color:#ffffff;
+  font-weight: 900;
+  font-size: small;
+}
+.DetailItemTitle{
+  margin-top: 20px;
+  color:white;
+  font-weight: 900;
+  font-size: larger;
+}
+.contentItemCount{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  column-gap: 10px;
+  
+}
+.ValorContentItemCount{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: 2/ 4;
+  height: 100%;
+  color:  #fa2acd;
+  font-weight: 900;
+}
+.btnminContentItemCount{
+  grid-column: 1/span 1;
+  border: 0px;
+  border-radius: 10px;
+  color: #fa2acd;
+
+}
+.btnminContentItemCount .btn-Button{
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 20px 20px 0px;
+  transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease;
+  color:#fa2acd;
+  background-color: #91d2f0;
+  border:solid 5px white;
+  border-radius: 23px;
+
+}
+.btnminContentItemCount:hover .btn-Button{
+  background-color: #fa2acd;
+  border:solid 5px white;
+  border-radius: 23px;
+  color:white;
+
+}
+.btnminContentItemCount:active .btn-Button{
+  background-color: #91d2f0;
+  border:solid 5px white;
+  border-radius: 23px;
+  
+}
+/* lado der */
+.btnmaxContentItemCount{
+  grid-column: 4/span 1;
+  border: 0px;
+  border-radius: 10px;
+  color: #fa2acd;
+
+}
+.btnmaxContentItemCount .btn-Button{
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 20px 20px 0px;
+  transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease;
+  color:#fa2acd;
+  background-color: #91d2f0;
+  border:solid 5px white;
+  border-radius: 23px;
+
+}
+.btnmaxContentItemCount:hover .btn-Button{
+  background-color: #fa2acd;
+  border:solid 5px white;
+  border-radius: 23px;
+  color:white;
+
+}
+.btnmaxContentItemCount:active .btn-Button{
+  background-color: #91d2f0;
+  border:solid 5px white;
+  border-radius: 23px;
+  
+}
+/* finprueba */
+.nextAndPreview{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-top: 1rem;
+  
+}
+
+
+.DetailItemAdd{
+  
+  overflow: hidden;
+  margin: 10px;
+
+  
+}
+.DetailItemAdd .btn-Button{
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease, border-color 0.2s ease;
+  color:#fa2acd;
+  box-sizing: border-box; 
+  
+}
+.DetailItemAdd:hover .btn-Button{
+  background-color:#fa2acd;
+  
+  color: white;
+  
+}
+
+.DetailItemAdd:active .btn-Button{
+  background-color: #91d2f0;
+  border:solid 5px white;
+  border-radius: 23px;
+  margin: 0;
+  
+  
+}
+.btnAñadir{
+  width:800px;
+  
+}
+.btn-Button{
+  
+    border: none;
+    /* Otros estilos opcionales */
+    padding: 10px 20px;
+    font-weight:900;
+    background-color: rgb(255, 255, 255, 0.0);
+    cursor: pointer;
+ 
+    width: 100%;
+   
+}
+.parrafoCantidad{
+  color:white;
+  font-weight: 900;
+  margin-bottom: -5px;
+}
+.contentDetailItem {
+  position: relative;
+}
+.btnCerrarDetail {
+  position: absolute;
+  top: 5px; /* Ajusta según sea necesario */
+  right: 5px; /* Ajusta según sea necesario */
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilo adicional para el botón */
+.btnCerrarDetail button {
+  background: transparent;
+  border: none;
+  color: #ffffff; /* Color de la "X" */
+  font-size: 20px; /* Tamaño de la "X" */
+  cursor: pointer;
+}
+
+.btnCerrarDetail button:hover {
+  color: #fa2acd;/* Cambia de color al pasar el mouse, opcional */
 }

@@ -1,40 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import NavBar from './component/NavBar'
-import ItemListContainer from './component/ItemListContainer'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { NavBar } from './component/NavBar';
+import ItemListContainer from './component/ItemListContainer';
+import { Layout } from './component/LayoutF';
+import ProductPage from './component/ProductPage';
+import DetailPage from './component/DetailPage';
 
 export function App() {
-  
-
-
   return (
-
     <>
-          <header >
-            <NavBar />
-           
-
-    </header>
-      <main>
-      <ItemListContainer greeting="Bienvenido"/>
-    </main>
-      
-    
-    </>  
-   
-
-     
-
-      
-    
-      
-        
-    
-  )
+      <BrowserRouter>
+        <header>
+          <NavBar />
+        </header>
+        <Routes>
+          <Route path='/' element={<main><h2>contactos</h2></main>}  /> 
+          <Route path='/productos' element={<Layout><ProductPage /></Layout>} />
+          <Route path='/productos/:categoria' element={<Layout><ProductPage /></Layout>} /> 
+          <Route path='/detalles/:id' element={<Layout><DetailPage /></Layout>} /> 
+          <Route path='/nosotros' element={<main><h2>Nosotros</h2></main>} />
+          <Route path='/contacto' element={<main><h2>Contacto</h2></main>} />
+          <Route path='*' element={<main><h2>Te perdiste</h2></main>} />
+        </Routes>  
+      </BrowserRouter>
+    </>
+  );
 }
-
-
-// export default App (para exportar de fabrica la function app)
