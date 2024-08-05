@@ -5,9 +5,9 @@ import { Button } from './Button';
 import { ItemCount } from './ItemCount';
 
 const ItemDetailContainer = () => {
-
-  const [id, setId] = useState(1);
-  const navigate =  useNavigate();
+  const { id } = useParams();
+  
+  const navigate = useNavigate();
   const [producto, setProducto] = useState({});
   const [cargando, setCargando] = useState(true);
 
@@ -20,11 +20,11 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const mostrarSiguiente = () => {
-    setId( id + 1 )
+    navigate(`/detalles/${parseInt(id) + 1}`);
   };
 
   const mostrarAnterior = () => {
-    setId( id - 1 )
+    navigate(`/detalles/${parseInt(id) - 1}`);
   };
 
   const añadir = () => {
@@ -78,8 +78,7 @@ const ItemDetailContainer = () => {
             <Button texto="Anterior" funcion={mostrarAnterior} />
           </div>
           <div className='DetailItemAdd'>
-            <button onClick={mostrarSiguiente}>siguiente</button>
-
+            <Button texto="Siguiente" funcion={mostrarSiguiente} />
           </div>
         </div>
       </div>
