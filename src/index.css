@@ -376,3 +376,45 @@ main {
 .btnCerrarDetail button:hover {
   color: #fa2acd;/* Cambia de color al pasar el mouse, opcional */
 }
+
+
+
+/*Botones de usuario  */
+.containerBtnUsersShopping{
+  display: flex;
+  flex-direction: row;
+}
+.contentBtnUsersShopping{
+  display: flex;
+  flex-direction: row;
+}
+
+.containterModalCarro {
+  width: 600px;
+  background-color: #fa2acd;
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+  position: absolute; /* Asegura que esté en una posición específica */
+  top: 6rem; /* Coloca el modal debajo del navbar */
+  right: 0; /* Alinea el modal a la derecha de la pantalla */
+/* Opcional: Agrega margen a la derecha del modal para separación */
+  z-index: 999; /* Asegura que el modal esté por encima del contenido, pero debajo del navbar */
+}
+.btnPagar{
+  
+  a{
+    text-decoration: none;
+    color: #fa2acd;;
+  }
+  
+}
+.DetailItemAdd:hover{ 
+  .btnPagar{
+    background-color: #91d2f0;;
+  }
+
+  a{
+    
+    color: #ffffff;
+  }
+}

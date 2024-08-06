@@ -10,6 +10,8 @@ const ItemDetailContainer = () => {
   const navigate = useNavigate(); //hock para interactuar con la barra de busqueda
   const [producto, setProducto] = useState({});
   const [cargando, setCargando] = useState(true);
+  const [isVisible, setVisible] = useState(true);
+
 
   useEffect(() => {
     setCargando(true);
@@ -17,6 +19,12 @@ const ItemDetailContainer = () => {
       .then(res => setProducto(res))
       .catch(err => console.error(err))
       .finally(() => setCargando(false));
+    if (parseInt(id) === 1) {
+        setVisible  (false)
+    } else {
+      setVisible  (true)
+      }
+
   }, [id]);
 
   const mostrarSiguiente = () => {
@@ -76,8 +84,14 @@ const ItemDetailContainer = () => {
           </div>
         </div>
         <div className='nextAndPreview'>
-          <div className='DetailItemAdd'>
-            <Button texto="Anterior" funcion={mostrarAnterior} />
+        <div className='DetailItemAdd'>
+          {
+            isVisible && (
+             
+              <Button texto="Anterior" funcion={mostrarAnterior} />
+           
+            )
+          }
           </div>
           <div className='DetailItemAdd'>
             <Button texto="Siguiente" funcion={mostrarSiguiente} />

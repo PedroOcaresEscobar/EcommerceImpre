@@ -29,8 +29,8 @@ export const NavBar = () => {
             {/* //Contenedor estado de compra */}
             <div className='contentPuchaseStatus'>  
               {/* // <CartWidget /> */}
-              <ButtonModalView icono="https://i.ibb.co/Dttzjkw/carrito.png" name="Carrito" />
-              <ButtonModalView icono="https://i.ibb.co/3hWdcXj/icono-login.png" name="Login" />
+       
+              <ButtonModalView />
              
             </div>
 
