@@ -122,11 +122,15 @@ main {
   font-weight: 900;
   color: #ffffff;
   font-size: large;
-  margin-top: 10px;
+
   font-size: small;
   margin-left: 3px;
 }
-
+.subT{
+  color: rgb(253, 224, 224);
+  margin-top: -10px;
+  font-size: x-small;
+}
 .descriptionPRight {
   margin-left: auto;
   font-weight: 900;

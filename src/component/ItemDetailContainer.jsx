@@ -41,11 +41,12 @@ const ItemDetailContainer = () => {
 
   if (!producto) {
     return <p><div className='DetailItemAdd'>
-    <Button texto="Anterior" funcion={mostrarAnterior} />
+      <Button texto="Anterior" funcion={mostrarAnterior} />
+     
   </div></p>;
   }
   const calcularTotal = () => {
-    
+    //incluir logica par a multiplicar la canbtidad * producto.price
   }
   return (
     <div>

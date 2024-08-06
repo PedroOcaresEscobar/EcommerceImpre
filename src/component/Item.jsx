@@ -34,19 +34,13 @@ export const Item = ({ producto }) => {
 
           <div>
           <p className='descriptionPLeft'>{producto.title}</p>
-          <p>{ producto.category}</p>
+          <p className='descriptionPLeft subT' >{ producto.category}</p>
          </div>
 
          
         <p className='descriptionPRight'>{formatPrice(producto.price)}</p>
         
         </div>
-        
-
-      {
-          
-      }
-
         </div>
     </div>
   )

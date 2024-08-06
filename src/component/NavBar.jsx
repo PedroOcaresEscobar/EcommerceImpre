@@ -3,7 +3,8 @@ import CartWidget from './CartWidget'
 import logoImprebooks from '../assets/logoImprebooks.png'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
-
+import carrito from '../assets/carrito.png'
+import { ButtonModalView } from './ButtonModalView'
 
 export const NavBar = () => {
     return (
@@ -27,8 +28,10 @@ export const NavBar = () => {
             
             {/* //Contenedor estado de compra */}
             <div className='contentPuchaseStatus'>  
-              <CartWidget />
-              <CartWidget/>
+              {/* // <CartWidget /> */}
+              <ButtonModalView icono="https://i.ibb.co/Dttzjkw/carrito.png" name="Carrito" />
+              <ButtonModalView icono="https://i.ibb.co/3hWdcXj/icono-login.png" name="Login" />
+             
             </div>
 
           </div>
