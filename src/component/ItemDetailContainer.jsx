@@ -7,7 +7,7 @@ import { ItemCount } from './ItemCount';
 const ItemDetailContainer = () => {
   const { id } = useParams();
   
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //hock para interactuar con la barra de busqueda
   const [producto, setProducto] = useState({});
   const [cargando, setCargando] = useState(true);
 
@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const mostrarSiguiente = () => {
-    navigate(`/detalles/${parseInt(id) + 1}`);
+    navigate("/detalles/"+(parseInt(id) + 1));
   };
 
   const mostrarAnterior = () => {
@@ -28,7 +28,6 @@ const ItemDetailContainer = () => {
   };
 
   const añadir = () => {
-    // Lógica para añadir al carrito
     console.log('Añadir al carrito:', producto);
   };
 
@@ -45,7 +44,9 @@ const ItemDetailContainer = () => {
     <Button texto="Anterior" funcion={mostrarAnterior} />
   </div></p>;
   }
-
+  const calcularTotal = () => {
+    
+  }
   return (
     <div>
       <div className='containerDetailItem'>

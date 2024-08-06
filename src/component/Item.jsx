@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import React from 'react'
-import { ItemCount } from './ItemCount'
+import React from 'react';
+import { ItemCount } from './ItemCount';
 import { Button } from './Button';
 import ItemDetailContainer from './ItemDetailContainer';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 export const Item = ({ producto }) => {
-  // Verificar si producto está definido
+
   if (!producto) {
     return <p>Error: Producto no definido</p>;
   }
-  const [isVisible, setVisible] = useState(false)
-  const mostrarDetalles = (id) => {
-    setVisible(true)
+  //const [isVisible, setVisible] = useState(false) // 
+  // const mostrarDetalles = (id) => {
+  //   setVisible(true)
 
-  }
+  // }
 
   const formatPrice = (price) => {
     return price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 });
@@ -31,9 +32,11 @@ export const Item = ({ producto }) => {
 
         <div className='descriptionCardItems'> 
 
-        
+          <div>
           <p className='descriptionPLeft'>{producto.title}</p>
           <p>{ producto.category}</p>
+         </div>
+
          
         <p className='descriptionPRight'>{formatPrice(producto.price)}</p>
         

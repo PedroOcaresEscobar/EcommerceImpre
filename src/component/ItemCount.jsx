@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from './Button'
 
-
-
-
-
-
 export const ItemCount = () => {
   const stock = 10
   const [count, setCount] = useState(0)
@@ -27,8 +22,6 @@ export const ItemCount = () => {
     
 }
 
-
-
   return (
     <div className='contentItemCount'>
       <div className='btnminContentItemCount'>
@@ -46,16 +39,3 @@ export const ItemCount = () => {
   )
 }
 
-{/* <div className='contentItemCount'>
-<div className='btnminContentItemCount'>
- <Button texto="-" funcion={restar} />
-</div>
-
-<p className='ValorContentItemCount'>{count}</p>
-
-<div className='btnmaxContentItemCount' >
-<Button texto="+" funcion={sumar}/>
-
-</div >
-
-</div> */}
