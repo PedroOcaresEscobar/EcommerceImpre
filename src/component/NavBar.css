@@ -2,6 +2,8 @@
 /* ----------------------------------------------------------- */
 header{
   background-color:#ff8de4 ;
+  position: fixed;
+  
 }
 .MainNavBar{
     background-color:#ff8de4 ;

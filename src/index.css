@@ -18,7 +18,7 @@ main {
   
   width: 80%;
  
-  
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
   /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); */
@@ -82,8 +82,7 @@ main {
 .containerCardItems {
   width: 100%;
   height: 100%;
- /* Espacio interno para que la imagen no toque los bordes */
-  /* background-color: blue; */
+
   transition: background-color 0.3s ease;
 }
 
@@ -143,18 +142,24 @@ main {
 
 /* --------------------MODAL----------- */
 .containerDetailItem {
+  position: fixed; /* Fija el modal en la pantalla */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centrar exactamente */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 2rem;
-  
-
+  background-color:#ff8de4; /* Fondo blanco para el modal */
+  padding: 2rem; /* Espacio interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra para el modal */
+  z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
 }
 
 .contentDetailItem {
-  width: 670px; /* Ancho del contenido del modal */
-  height: 280px; /* Alto del contenido del modal */
+  width: 720px; /* Ancho del contenido del modal */
+  height: 320px; /* Alto del contenido del modal */
   background-color: #fff; /* Color de fondo blanco para el contenido */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
@@ -167,7 +172,7 @@ main {
   display: grid; 
   grid-template-columns: repeat(10,1fr);
   /* background-color: rgb(253, 178, 236); */
-  background-color: #fa2acd;
+  background-color: #fdb2ec;
   height: 100%;
   
 }
@@ -199,7 +204,7 @@ main {
 .DetailItemTitle,
 .contentDetailItemPrice,
 .DetailItemCount{
-  margin-bottom: 10px; /* Espaciado entre elementos */
+  margin-bottom: 5px; /* Espaciado entre elementos */
 }
 .DetailItemPrice{
   color:#ffffff;
@@ -211,6 +216,7 @@ main {
   color:white;
   font-weight: 900;
   font-size: larger;
+  margin-bottom: 5px !important;
 }
 .contentItemCount{
   display: grid;
@@ -261,6 +267,12 @@ main {
   border:solid 5px white;
   border-radius: 23px;
   
+}
+.addToCar  .btn-Button:hover{
+
+  
+  background-color: #91d2f0 !important;
+  color: white !important;
 }
 /* lado der */
 .btnmaxContentItemCount{
@@ -316,6 +328,7 @@ main {
   transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease, border-color 0.2s ease;
   color:#fa2acd;
   box-sizing: border-box; 
+
   
 }
 .DetailItemAdd:hover .btn-Button{
@@ -354,27 +367,33 @@ main {
   font-weight: 900;
   margin-bottom: -5px;
 }
-.contentDetailItem {
-  position: relative;
-}
+
 .btnCerrarDetail {
   position: absolute;
   top: 5px; /* Ajusta según sea necesario */
   right: 5px; /* Ajusta según sea necesario */
-  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  z-index: 1000;
+  background-color: white;
+  border-radius: 100%;
+  width: 30px;
+  width: 30px;
+  
+   /* Asegura que el botón esté por encima de otros elementos */
 }
 
 /* Estilo adicional para el botón */
 .btnCerrarDetail button {
   background: transparent;
   border: none;
-  color: #ffffff; /* Color de la "X" */
+  color: #fa2acd; /* Color de la "X" */
   font-size: 20px; /* Tamaño de la "X" */
   cursor: pointer;
+  padding: 0;
 }
 
-.btnCerrarDetail button:hover {
-  color: #fa2acd;/* Cambia de color al pasar el mouse, opcional */
+.btnCerrarDetail:hover {
+  background-color: #91d2f0;
+  color: #ffffff;/* Cambia de color al pasar el mouse, opcional */
 }
 
 
@@ -389,17 +408,7 @@ main {
   flex-direction: row;
 }
 
-.containterModalCarro {
-  width: 600px;
-  background-color: #fa2acd;
-  border-radius: 8px; /* Bordes redondeados opcionales */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
-  position: absolute; /* Asegura que esté en una posición específica */
-  top: 6rem; /* Coloca el modal debajo del navbar */
-  right: 0; /* Alinea el modal a la derecha de la pantalla */
-/* Opcional: Agrega margen a la derecha del modal para separación */
-  z-index: 999; /* Asegura que el modal esté por encima del contenido, pero debajo del navbar */
-}
+
 .btnPagar{
   
   a{
@@ -417,4 +426,199 @@ main {
     
     color: #ffffff;
   }
+}
+.noHayMasProductos{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  img{
+    width: 500px;
+  }
+}
+
+/* DETALLES INTERNOS DE LA LISTA DEL MODAL */
+
+.containterModalCarro{
+
+}
+
+
+
+
+/*CONTENEDOR LOGIN BUTON CONTENT */
+.containterModalLogin{
+  width: 600px;
+  
+  background-color: #fa2acd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  
+  z-index: 999;
+}
+.envolturaCarro{
+
+}
+.containterModalCarro {
+  width: 600px;
+  height: 90%;
+  background-color: #ff8de4 ;
+  
+
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  display: grid;
+  grid-template-rows: 1fr 0.2fr;
+  position: fixed;
+  z-index: 999;
+  
+}
+.contentModalCarro{
+  width: 100%;
+}
+.containerCarriDetail{
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  
+
+}
+.contentCarrilDetail{
+
+  max-height: auto;
+  display: grid;
+  
+  grid-template-rows: auto 1fr auto;  
+  
+}
+.contentCarrilDetailInteriorSaludo{
+  margin-top: 20px;
+  grid-row: 1 / 2;
+  h2{
+    font-weight: bolder;
+    color: white;
+  }
+  h3{
+    color: #fff;
+    font-size: large;
+  }
+
+}
+.contentCarrilDetailInteriorDetalle{
+  grid-row: 2 / 3;
+  overflow-y: auto;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 70vh; 
+}
+
+
+.contentCarrilDetailInteriorDetalle ul{
+  list-style-type: none; /* Elimina los puntos de la lista */
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 0; /* Elimina el padding por defecto */
+  overflow-y: auto; /* Agrega un scrollbar vertical cuando sea necesario */
+
+}
+
+
+.contentCarrilDetailInteriorTotal{
+  grid-row: 3 / 4;
+  border-top: solid 3px white;
+  position: fixed;
+  width: 600px;
+}
+
+.detailAldetail{
+  display: grid;
+  grid-template-columns:0.8fr 1fr 1fr;
+  gap: 5px;
+  margin: 10px;
+  text-align: start;
+  background-color: white;
+  border: solid 5px #91d2f0;
+  border-radius: 20px;
+  padding: 10px;
+  
+
+}
+
+.detailAldetailImagen{
+  width: 100%;
+
+}
+
+/* objeto de descripcion */
+.detailAldetailDescription{
+
+display: grid;
+
+grid-template-rows: 2fr 1fr;
+}
+.itemDetailCarroTitulo{
+  margin-bottom: 0px;
+}
+.itemDetailCarroCategoria{
+
+}
+.Left{
+  
+  text-align: end;
+}
+
+
+
+.parrafo{
+  
+}
+.imgaldiutoi{
+  width: 100%;
+  border-radius: 10px;
+}
+.eliminar button{
+  text-align: end;
+  padding-right: 0px;
+  color: red;
+}
+
+.detalleTotal{
+  padding-top: 20px;
+  display: grid;
+  margin: auto;
+  width: 90%;
+  grid-template-columns: 1fr 1fr;
+  p{
+    margin-bottom: 0px;
+  }
+  
+
+
+}
+.detalleTotalParrafoL{
+  text-align: start;
+  color: white;
+  font-weight: bolder;
+}
+.detalleTotalParrafoR{
+  text-align: end;
+  color: white;
+}
+.detalleTotalParrafoComentario{
+  grid-column: 1/3;
+
+  color: white;
+  text-align: start;
+  margin-top: 0px !important;
+}
+.m0{
+  width: 90%;
+  margin: 0px;padding: 0px;
 }
