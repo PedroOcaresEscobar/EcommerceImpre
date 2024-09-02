@@ -1,0 +1,24 @@
+@import './Variables.scss';
+
+
+.btn{
+
+    background-color: $btnBC ;
+    border-radius: $btnBR;
+    color:$btnTC;
+    border:$btnBorder;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    font-weight: 900;
+    cursor: pointer;
+    &:hover{
+        background-color:$btnBCHover  ;
+        color:$btnTCHover;
+    }
+    &:active{
+        background-color:$btnBCActive;
+        border:$btnBorAct;
+        border-radius: $btnBR;
+    }
+}

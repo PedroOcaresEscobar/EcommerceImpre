@@ -1,0 +1,87 @@
+.contentItemCount{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    column-gap: 10px;
+    
+  }
+  .ValorContentItemCount{
+    display: flex;
+  
+    justify-content: center;
+  
+    grid-column: 2/ 4;
+    height: 100%;
+    color:  #fa2acd;
+    font-weight: 900;
+  }
+  .btnminContentItemCount{
+    grid-column: 1/span 1;
+    border: 0px;
+    border-radius: 10px;
+    color: #fa2acd;
+  
+  }
+  .btnminContentItemCount .btn-Button{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 20px 20px 0px;
+    transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease;
+    color:#fa2acd;
+    background-color: #91d2f0;
+    border:solid 5px white;
+    border-radius: 23px;
+  
+  }
+  .btnminContentItemCount:hover .btn-Button{
+    background-color: #fa2acd;
+    border:solid 5px white;
+    border-radius: 23px;
+    color:white;
+  
+  }
+  .btnminContentItemCount:active .btn-Button{
+    background-color: #91d2f0;
+    border:solid 5px white;
+    border-radius: 23px;
+    
+  }
+  .addToCar  .btn-Button:hover{
+  
+    
+    background-color: #91d2f0 !important;
+    color: white !important;
+  }
+  /* lado der */
+  .btnmaxContentItemCount{
+    grid-column: 4/span 1;
+    border: 0px;
+    border-radius: 10px;
+    color: #fa2acd;
+  
+  }
+  .btnmaxContentItemCount .btn-Button{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 20px 20px 0px;
+    transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease;
+    color:#fa2acd;
+    background-color: #91d2f0;
+    border:solid 5px white;
+    border-radius: 23px;
+  
+  }
+  .btnmaxContentItemCount:hover .btn-Button{
+    background-color: #fa2acd;
+    border:solid 5px white;
+    border-radius: 23px;
+    color:white;
+  
+  }
+  .btnmaxContentItemCount:active .btn-Button{
+    background-color: #91d2f0;
+    border:solid 5px white;
+    border-radius: 23px;
+    
+  }
