@@ -17,7 +17,7 @@ function App() {
           <NavBar />
         </header>
         <Routes>
-          <Route path='/' element={<main><h2>contactos</h2></main>}  /> 
+          <Route path='/' element={<Layout><ProductPage/></Layout>}  /> 
           <Route path='/productos' element={<Layout><ProductPage/></Layout>} />
           <Route path='/productos/:categoria' element={<Layout><ProductPage /></Layout>} /> 
           <Route path='/detalles/:id' element={<Layout><ItemDetailContainer /></Layout>} /> 
