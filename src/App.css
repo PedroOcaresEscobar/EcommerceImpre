@@ -6,19 +6,13 @@ header{
   height: 6rem;
   
 }
-main {
-  background-color: #fdb2ec;
-  display: flex;
-  min-height: 100vh; 
-  justify-content: center;/* 100vh significa 100% de la altura de la ventana del navegador */
-  
-}
+
 
 .containerMainMain{
   
   width: 80%;
- 
-  margin-top: 50px;
+
+
   margin-right: auto;
   margin-left: auto;
   /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); */

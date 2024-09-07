@@ -60,7 +60,17 @@
     border: 0px;
     border-radius: 10px;
     color: #fa2acd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   
+  }
+  .snStock{
+    p{
+      font-size: xx-small;
+
+    }
   }
   .btnmaxContentItemCount .btn-Button{
     background-color: rgb(255, 255, 255);

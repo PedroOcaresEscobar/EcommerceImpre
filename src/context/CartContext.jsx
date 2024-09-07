@@ -19,20 +19,37 @@ export const CartProvider = ({ children }) => {
         return savedCart ? JSON.parse(savedCart) : [];
     })
 
-
+    const [vCB,setVCB] = useState(true)
     //Ahora crearemos las funciones para agregar, quitar, calcular los productos
     //en el carro. Definimos la funcion addCart y le damos el prop producto
     const addCart = (producto) => {
-        //llamamos a la funcion setCart le asignamos el valor de este a prevCart
-        setCart(prevCart => {
-            //Creamos el arreglo updateCart que recibira el arreglo almacenado en setCart
-            // que vendria siendo el estado anterior del carro y ademas se le agrega el producto nuevo
-            const updateCart = [...prevCart, producto];
-            //luego le pasamos este nuevo arreglo a la memoria del sessionStorage en cadena Json
-            sessionStorage.setItem('cart', JSON.stringify(updateCart));
-            //Retornamos el nuevo arreglo con el producto agregado y este valor lo tomara setCart
-            return updateCart;
-        });
+        // Verificar si la cantidad del producto es válida
+        if (producto.quantity <= producto.stock) {
+            setCart(prevCart => {
+                // Encuentra el índice del producto en el carrito
+                const existingProductIndex = prevCart.findIndex(item => item.id === producto.id);
+    
+                if (existingProductIndex > -1) {
+                    // Si el producto ya existe, actualiza su cantidad
+                    const updatedCart = [...prevCart];
+                    const currentProduct = updatedCart[existingProductIndex];
+                    
+                    // Verificar que la nueva cantidad no exceda el stock disponible
+                    if (currentProduct.quantity + producto.quantity <= producto.stock) {
+                        updatedCart[existingProductIndex].quantity += producto.quantity;
+                        sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+                        return updatedCart;
+                    } else {
+                        return prevCart;
+                    }
+                } else {
+                    // Si el producto no existe, agrégalo al carrito
+                    const updatedCart = [...prevCart, producto];
+                    sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+                    return updatedCart;
+                }
+            });
+        }
     };
 
     //Crearemos la funcion para remover un producto por su ID.
@@ -43,6 +60,7 @@ export const CartProvider = ({ children }) => {
         //item.id que tengan el id igual al productoID se excluirán del nuevo arreglo
         //o sea filtrara todos los item que tengan el item.id distinto del productoID
         setCart(cart.filter(item => item.id !== productoID))
+
     };
     
     //Creamos la funcion getTotal para obtener la suma total de los productos que
@@ -55,6 +73,15 @@ export const CartProvider = ({ children }) => {
     const getTotal = () => {
         return cart.reduce((total, item) => total + item.price * item.quantity, 0)
     };
+    const productCount = () => {
+        return cart.reduce((total, item) => total + item.quantity, 0)
+    }
+    const formatPrice = (price) => {
+        if (price === undefined || price === null) {
+          price(0)
+        }
+        return price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 });
+      };
 
     // Creamos la funcion clearCart la cual limpiara nuestro CartProvider
     // luego usamos la funcion setCart para actualizar nuestro estado a 
@@ -105,15 +132,15 @@ export const CartProvider = ({ children }) => {
         const discount = getTotal() * (porcentajeDescuento / 100);
         return getTotal() - discount;
     };
-
+ 
     return (
     // Aquí proporcionamos las funciones y el estado que estarán disponibles de manera global
     // para todos los componentes que consumen este contexto.
         <>
             <CartContext.Provider value=
                 {{
-                    cart, addCart, removeFromCart, clearCart,
-                    getTotal, getGroupedCart, getCartItemCount, findProductCart, applyDiscount
+                    cart, productCount,addCart, removeFromCart, clearCart,formatPrice,
+                    getTotal, getGroupedCart, getCartItemCount, findProductCart, applyDiscount,vCB, setVCB
                 }} >
                 {children}
             </CartContext.Provider>

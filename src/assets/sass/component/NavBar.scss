@@ -1,5 +1,7 @@
+#movile{
+  display: none !important;
+}
 
-  
   
   
   
@@ -26,11 +28,174 @@
   
   /* Móviles grandes y tabletas en orientación vertical */
   @media (max-width: 768px) {
+    .desktop{
+      display: none !important;
+    }
+    #movile{
+      display: grid !important;
+    }
+
+    header{
+      background-color:#ff8de4 ;
+      position: fixed;
+      
+    }
+    .MainNavBar{
+        background-color:#ff8de4 ;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        height: 75px;
+        max-width: 80rem;
+    
+      }
+    
+    .contentMainNavBar{
+      grid-column: 1/13;
+      background-color: blue;
+      height: 6rem;
+      justify-content: center;
+      text-align: center;
+      /* background-color: red; */
+    }
+    
+    .contentNavBar{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      background-color:#ff8de4 ;
+      height: 6rem;
+    
+    }
+    
+    /* ----------------------------------------------------------- */
+    /*interior del navbar  */
+      /*interior del navbar  LOGO */
+    .contentLogo{
+      grid-column: 1/span 2;
+      /* background-color: blue; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+        /*interior del navbar  LOGO IMAGEN*/
+    .contentLogo .logoPrincipalNavBAr{
+      width: 70%;
+    
+    }
+    /* ----------------------------------------------------------- */
+      /*Interior del NAVBAR LINKS */
+    .contentLinks{
+      
+      grid-column: 3/11;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: 20px;
+      /* background-color: aqua; */
+    
+    }
+    .links{
+      font-size: 1rem;
+      line-height: 1.5rem;
+        padding: 10px 25px 10px 25px;
+        margin: 10px;
+        text-decoration: none;
+        color: #ffffff;
+        transition: background-color 0.2s ease, color 0.2s ease, border-radius 0.2s ease;
+        
+    
+    }
+    .links:hover{
+      
+      color: #ff8de4 ;
+      background-color:#ffffff ;
+      border-radius: 9999px;
+    
+    }
+    /* ----------------------------------------------------------- */
+      /*Interior del NAVBAR CARRO Y LOGIN */
+    .contentPuchaseStatus{
+      cursor: pointer;
+      grid-column: 11/span 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+    }
+    
+    
+    
+    /* ----------------------------------------------------------- */
+    /* ----------------------------------------------------------- */
+    
+    /* Zona del BUTTON del carrito  */
+    
+    .carrito {
+      background-color: aliceblue;
+      border-radius: 40px;
+      padding: 10px;
+      margin: 15px;
+      border: solid 5px #ff8de4;
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease, border-color 0.2s ease;
+  
+    }
+    
+    
+    .carrito:hover {
+      border: solid 5px #fa75db;
+    }
+    
+    .carrito:active {
+      background-color: #91d2f0;
+      /*background-color: #f7d9f0; rosado alternativo*/
+      border-color: #ffffff;     
+    }
+    
+    .imgCarrito {
+      margin: auto;
+      width: 20px;
+    }
+    
+  
+    .cartEmpty{
+      background-color: #ff918d;
+      width: 35rem;
+      height: 20%;
+      border-radius: 0 0 0 20px;
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      display: flex;
+      box-shadow: 0 10px 8px #000000b3;
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    .contentCartEmpty{
+      width: 100%;
+      height: 100%;
+    }
+    .contentCartEmpty img {
+      width: auto;
+      height: auto;
+      max-height: 100%;
+  }
+    
+    
     /* Estilos para móviles grandes y tabletas en orientación vertical */
   }
   
   /* Tabletas en orientación horizontal */
-  @media (max-width: 1024px) {
+  @media (min-width: 769px) and (max-width: 1024px) {
     /* Estilos para tabletas en orientación horizontal */
         /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
@@ -115,6 +280,7 @@ header{
   /* ----------------------------------------------------------- */
     /*Interior del NAVBAR CARRO Y LOGIN */
   .contentPuchaseStatus{
+    cursor: pointer;
     grid-column: 11/span 2;
     display: flex;
     align-items: center;
@@ -130,13 +296,14 @@ header{
   /* Zona del BUTTON del carrito  */
   
   .carrito {
+    cursor: pointer;
     background-color: aliceblue;
     border-radius: 100%;
     padding: 10px;
     margin: 15px;
     border: solid 5px #ff8de4;
     width: 45px;
-    height: 45px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +333,7 @@ header{
   }
   
   /* Computadoras portátiles y escritorios pequeños */
-  @media (max-width: 1440px) {
+  @media (min-width: 1024px) and (max-width: 1440px) {
     /* Estilos para computadoras portátiles y escritorios pequeños */
    /* Estilos para tabletas en orientación horizontal */
         /* ----------------------------------------------------------- */
@@ -252,6 +419,7 @@ header{
   /* ----------------------------------------------------------- */
     /*Interior del NAVBAR CARRO Y LOGIN */
   .contentPuchaseStatus{
+    cursor: pointer;
     grid-column: 11/span 2;
     display: flex;
     align-items: center;
@@ -267,6 +435,7 @@ header{
   /* Zona del BUTTON del carrito  */
   
   .carrito {
+    cursor: pointer;
     background-color: aliceblue;
     border-radius: 100%;
     padding: 10px;
@@ -304,6 +473,9 @@ header{
   
   /* Computadoras de escritorio grandes */
   @media (min-width: 1441px) {
+    #movile{
+      display: none !important;
+    }
        /* Estilos para tabletas en orientación horizontal */
         /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
@@ -388,6 +560,7 @@ header{
   /* ----------------------------------------------------------- */
     /*Interior del NAVBAR CARRO Y LOGIN */
   .contentPuchaseStatus{
+    cursor: pointer;
     grid-column: 11/span 2;
     display: flex;
     align-items: center;
@@ -404,17 +577,20 @@ header{
   
   .carrito {
     background-color: aliceblue;
-    border-radius: 100%;
+    border-radius: 40px;
     padding: 10px;
     margin: 15px;
     border: solid 5px #ff8de4;
-    width: 45px;
-    height: 45px;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     transition: background-color 0.4s ease, color 0.4s ease, border-radius 0.2s ease, border-color 0.2s ease;
+
   }
+  
   
   .carrito:hover {
     border: solid 5px #fa75db;
@@ -432,8 +608,30 @@ header{
   }
   
 
-  
-  
+  .cartEmpty{
+    background-color: #ff918d;
+    width: 35rem;
+    height: 20%;
+    border-radius: 0 0 0 20px;
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    display: flex;
+    box-shadow: 0 10px 8px #000000b3;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .contentCartEmpty{
+    width: 100%;
+    height: 100%;
+  }
+  .contentCartEmpty img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+}
   
   
   }

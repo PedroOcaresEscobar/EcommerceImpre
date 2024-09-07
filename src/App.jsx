@@ -1,16 +1,15 @@
-import { useState } from 'react'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
-import { NavBar } from './component/NavBar'
+import { NavBar } from './components/NavBar'
+import { Layout } from './components/Layout';
+import  { ProductPage } from './components/ProductPage';
+import { ItemDetailContainer } from './components/componentsDetails/ItemDetailContainer';
+import { Pagar } from './components/componentsPagos/Pagar';
+import { CheckOut } from './components/componentsPagos/CheckOut';
 
-import { Layout } from './component/Layout';
-import ProductPage from './component/ProductPage';
-import DetailPage from './component/DetailPage';
-import { ItemDetailContainer2 } from './component/ItemDetailContainer2';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
        <BrowserRouter>
@@ -18,13 +17,12 @@ function App() {
           <NavBar />
         </header>
         <Routes>
-
-           
-
           <Route path='/' element={<main><h2>contactos</h2></main>}  /> 
           <Route path='/productos' element={<Layout><ProductPage/></Layout>} />
           <Route path='/productos/:categoria' element={<Layout><ProductPage /></Layout>} /> 
-          <Route path='/detalles/:id' element={<Layout><ItemDetailContainer2/></Layout>} /> 
+          <Route path='/detalles/:id' element={<Layout><ItemDetailContainer /></Layout>} /> 
+          <Route path='/pagar' element={<Layout><Pagar /></Layout>} />
+          <Route path='/pagar/checkout' element={<Layout><CheckOut/></Layout>} />
           <Route path='/nosotros' element={<main><h2>Nosotros</h2></main>} />
           <Route path='/contacto' element={<main><h2>Contacto</h2></main>} />
           <Route path='*' element={<main><h2>Te perdiste</h2></main>} />

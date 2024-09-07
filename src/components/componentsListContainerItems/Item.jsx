@@ -1,24 +1,15 @@
-import { useState } from 'react';
+
 import React from 'react';
-import { ItemCount } from './ItemCount';
-
-import ItemDetailContainer from './ItemDetailContainer';
 import { Link } from 'react-router-dom';
-
+import { useCart } from '../../context/CartContext';
 export const Item = ({ producto }) => {
-
+  const { formatPrice } = useCart();
   if (!producto) {
     return <p>Error: Producto no definido</p>;
   }
-  //const [isVisible, setVisible] = useState(false) // 
-  // const mostrarDetalles = (id) => {
-  //   setVisible(true)
 
-  // }
 
-  const formatPrice = (price) => {
-    return price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 });
-  };
+
   const añadir = () => {
     
   };

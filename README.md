@@ -1,8 +1,31 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-objetivos pendientes :
 
-Currently, two official plugins are available:
+1.100% Reponsive en todos los components.
+    -CardItemDetail.
+    -List Item
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+2.Agregar Validacion en detailitem cuando item.stock==0 <Button a{adir al carrito bloquear}>
+
+3.Desaparecer carwidget en checkOut
+
+4.Agregar Redireccionamiento al presionar confirmar pedido.
+
+5.Agregar un span de Stock:
+
+6:Agregar funcionalidades para ocultar boton dependiendo del item.stock
+
+
+
+
+
+
+
+sass --watch src/assets/sass/component/cartItemDetail.scss src/styles/cartItemDetail.css
+sass --watch src/index.scss src/index.css
+
+sass --watch src/assets/sass/component/ProductosMain.scss src/styles/ProductosMain.css
+
+sass --watch src/assets/sass/component/PayDetail.scss src/styles/PayDetail.css
