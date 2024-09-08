@@ -62,14 +62,14 @@ export const CheckOut = () => {
         }
 
         await updateDoc(stockRef, { stock: newStock });
-        console.log(`Stock actualizado para el producto: ${product.title}`);
+        // console.log(`Stock actualizado para el producto: ${product.title}`);
       }
 
       clearCart();
       setOrder(orderDoc); // Guardar el documento completo de la orden
       setNumorder(true);
     } catch (error) {
-      console.error('Error al procesar la orden: ', error);
+      // console.error('Error al procesar la orden: ', error);
     }
   };
 
