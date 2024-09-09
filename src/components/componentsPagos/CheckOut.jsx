@@ -22,7 +22,7 @@ export const CheckOut = () => {
     e.preventDefault();
 
     if (!cart || cart.length === 0) {
-      console.error('El carrito está vacío o indefinido');
+      // console.error('El carrito está vacío o indefinido');
       return;
     }
 
@@ -44,12 +44,12 @@ export const CheckOut = () => {
 
       // Agregar la orden a la colección
       const orderDoc = await addDoc(orderRef, data);
-      console.log('Order creada con ID: ', orderDoc.id);
+      // console.log('Order creada con ID: ', orderDoc.id);
 
       // Iterar sobre cada producto en el carrito para actualizar el stock
       for (const product of cart) {
         if (!product.id || product.stock === undefined || product.quantity === undefined) {
-          console.error('Faltan datos de producto, stock o cantidad en el carrito');
+          // console.error('Faltan datos de producto, stock o cantidad en el carrito');
           return;
         }
 
@@ -57,7 +57,7 @@ export const CheckOut = () => {
         const newStock = product.stock - product.quantity;
 
         if (newStock < 0) {
-          console.error('Stock insuficiente para el producto', product.title);
+          // console.error('Stock insuficiente para el producto', product.title);
           return;
         }
 
